@@ -34,7 +34,8 @@
                  VerticalAlignment="Stretch"
                  HorizontalAlignment="Stretch"
                  Margin="5,5,5,0" Text="Write a note..."
-                 />
+                >
+        </TextBox>
 
         <ListBox  ItemsSource="{Binding Notes}"
                   Background="#ceddf3"
@@ -43,22 +44,26 @@
                   Grid.Row="0"
                   Grid.Column="1"
                   Margin="5,5,5,0"
-                  />
+                  >
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text}" />
+                </DataTemplate>
+                
+            </ListBox.ItemTemplate>
+
+        </ListBox>
 
 
 
         <StackPanel Background="#3a93c9" Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="5">
-            <Button Content="Добавить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" />
-
-
-
+            <Button Content="Добавить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" Click="Button_Click" />
         </StackPanel>
 
         <StackPanel Background="#3a93c9" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="5">
             <Button Content="Удалить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" />
         </StackPanel>
-
-
 
     </Grid>
 </Window>

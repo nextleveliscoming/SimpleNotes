@@ -26,6 +26,9 @@ namespace SimpleNotes
             DataContext = this;
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
