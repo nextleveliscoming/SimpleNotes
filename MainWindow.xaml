@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleNotes"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=False}"
         mc:Ignorable="d"
         Title="SimpleNotes" Height="500" Width="800"
         MaxHeight="500"
@@ -35,7 +36,7 @@
                  Margin="5,5,5,0" Text="Write a note..."
                  />
 
-        <ListBox  ItemsSource="{Binding Notesl}"
+        <ListBox  ItemsSource="{Binding Notes}"
                   Background="#ceddf3"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
