@@ -25,7 +25,7 @@
 
 
 
-        <TextBox x:Name="TextBox"
+        <TextBox x:Name="NewNote"
                  TextWrapping="Wrap"
                  FontSize="20"
                  Background="#cca85a"
@@ -37,7 +37,8 @@
                 >
         </TextBox>
 
-        <ListBox  ItemsSource="{Binding Notes}"
+        <ListBox  x:Name="ListNote"
+                  ItemsSource="{Binding Notes}"
                   Background="#ceddf3"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
@@ -45,25 +46,28 @@
                   Grid.Column="1"
                   Margin="5,5,5,0"
                   >
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Text}" />
-                </DataTemplate>
-                
-            </ListBox.ItemTemplate>
 
+            <ListBox.ItemTemplate>
+                <DataTemplate x:Name="DataTemplateNote">
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock x:Name="TextBlockNote" Text="{Binding Text}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
 
 
         <StackPanel Background="#3a93c9" Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="5">
-            <Button Content="Добавить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" Click="Button_Click" />
+            <Button x:Name="AddNote" Content="Добавить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" Click="AddNote_Click"  />
         </StackPanel>
 
         <StackPanel Background="#3a93c9" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="5">
-            <Button Content="Удалить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" />
+            <Button x:Name="DeleteNote" Content="Удалить заметку" Background="#3a93c9" FontSize="16" Cursor="Hand" Foreground="White" BorderThickness="0" Margin="5,0,0,0" Width="Auto" Click="DeleteNote_Click"  />
         </StackPanel>
+
+        
+        
 
     </Grid>
 </Window>

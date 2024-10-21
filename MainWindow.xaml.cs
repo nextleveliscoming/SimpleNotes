@@ -26,9 +26,30 @@ namespace SimpleNotes
             DataContext = this;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+       
+
+        private void AddNote_Click(object sender, RoutedEventArgs e)
         {
 
+            Note note = new Note()
+            {
+                Text = NewNote.Text
+            };
+
+            Notes.Add(note);
+        }
+
+        private void DeleteNote_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedText = "";
+            
+            foreach (Note note in Notes)
+            {
+                if (note.Text == selectedText)
+                {
+                    Notes.Remove(note);
+                }
+            }
         }
     }
 }
